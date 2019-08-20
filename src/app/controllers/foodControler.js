@@ -30,13 +30,10 @@ router.get('/:id', async (req, res) => {
 router.get('/name/:name', async (req, res) => {
     try {
         const name = req.params.name.toLowerCase();
-        console.log('name:', name);
         const foods = await Food.find();
         const possibleFoods = foods.filter(food => food.title.toLowerCase().indexOf(name) != -1);
-        console.log(possibleFoods);
         res.send(possibleFoods);
     } catch (error) {
-        console.log(error);
         res.status(400).send({ error: 'Error loading food' });
     }
 });

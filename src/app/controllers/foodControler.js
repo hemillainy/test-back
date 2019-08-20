@@ -28,7 +28,6 @@ router.get('/:id', async (req, res) => {
 });
 
 router.get('/name/:name', async (req, res) => {
-    console.log('aaaaaaaaaa');
     try {
         const name = req.params.name.toLowerCase();
         console.log('name:', name);
